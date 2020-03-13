@@ -6,6 +6,8 @@
 关于数据结构和算法我只有基础的一些知识 我会留下尽可能多的注释来帮助理解 保持代码的简单好清晰
 对于我自己做起来困难的题目,可能会自己制作一些测试集留在里面.
 
+尽可能的,我会使用纯C去描述,除了在输入输出部分便捷使用iostream,或者偶尔很累了的时候使用一些STL.
+
 If my code add a little help,please give me a star//I am striving for providing for myself by coding,if that didn't work ,I will be forced to make a living by occupation that I don't enjoy .please
 
 I only have basic knowledge about algorithms and data structure at the time I am tring to pass PTA advanced level. 
