@@ -1,19 +1,6 @@
-#include <algorithm>
-#include <cctype>
-#include <cmath>
-#include <cstdio>
-#include <iomanip>
 #include <iostream>
-#include <map>
-#include <set>
 #include <stdio.h>
-#include <string>
-#include <vector>
-
-using namespace std;
-class Solution {
-public:
-};
+//使用BFS
 int main(void) {
   //输入,用numberOfNodes保存树的节点数(0,100),numberOfNoleafs保存非叶节点数(0,numberOfNodes),
   // list[i][j]表示i号节点的第j个儿子的编号.list被初始化成全-1,list最后一个保存i有几个儿子.
@@ -43,24 +30,21 @@ int main(void) {
   int lastPoint = 0;
   queue[0] = 1;
   ++lastPoint;
-  int cnt = 1;  //统计如果队列的点的总数
-  int cmp = 0;  //第cmp个访问的节点
   int last = 1; //当前层数的最后一个节点将被访问的编号
   while (lastPoint != firstPoint + 1) {
     sign = 0;
-    cmp++;
     for (int i = 0; i < list[queue[firstPoint + 1]][104]; ++i) {
       queue[lastPoint] = list[queue[firstPoint + 1]][i];
       ++lastPoint;
-      ++sign;cnt++;
+      ++sign;
     } // push
     if (!sign) {
       ++numberOfLeafs[levelCount];
     }
-    if (last == cmp) {
+    if (last == queue[firstPoint+1]) {
       levelCount++;
-      last = cnt;
-      //之后开始访问第levelcnt层
+      last = queue[lastPoint-1];
+      //之后开始访问下一层层
     }
     ++firstPoint;
   }
@@ -161,6 +145,3 @@ int main(void) {
 
 0 6 3 12 4 2 1
 */
-
-
-
